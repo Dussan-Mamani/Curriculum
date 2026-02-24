@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV - Dussan David Mamani Quispe | Desarrollador de Sistemas - Soporte Técnico</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: white;
+            color: #333;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            width: 210mm;
+            height: 297mm;
+            background: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Aca cambias el color del navbar */
+        header {
+            background: #2c3e50;
+            color: white;
+            padding: 20px 25px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 180px;
+        }
+
+        .header-content {
+            flex: 1;
+        }
+
+        .photo-section {
+            width: 130px;
+            height: 130px;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 3px solid rgba(255, 255, 255, 0.2);
+            background-color: #ecf0f1;
+            margin-left: 15px;
+            flex-shrink: 0;
+        }
+
+        .photo-placeholder {
+            width: 100%;
+            height: 100%;
+        }
+
+        .photo-placeholder img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        h1 {
+            font-size: 24px;
+            margin-bottom: 5px;
+            color: #ecf0f1;
+        }
+
+        .title {
+            font-size: 14px;
+            margin-bottom: 4px;
+            color: #bdc3c7;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-top: 8px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 13px;
+        }
+
+        .contact-item i {
+            color: #3498db;
+            width: 14px;
+        }
+
+        main {
+            display: grid;
+            grid-template-columns: 1fr 2fr 3fr;
+            height: calc(297mm - 220px);
+        }
+
+        .sidebar {
+            background: #f8f9fa;
+            padding: 18px;
+            border-right: 1px solid #eaeaea;
+        }
+
+        .content {
+            padding: 18px;
+        }
+
+        .section {
+            margin-bottom: 18px;
+        }
+
+        h2 {
+            color: #2c3e50;
+            border-bottom: 1px solid #3498db;
+            padding-bottom: 5px;
+            margin-bottom: 12px;
+            font-size: 16px;
+        }
+
+        .education-item,
+        .experience-item,
+        .project-item {
+            margin-bottom: 12px;
+            padding-bottom: 12px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .education-item:last-child,
+        .experience-item:last-child,
+        .project-item:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .item-title {
+            font-weight: 600;
+            color: #2c3e50;
+            font-size: 14px;
+        }
+
+        .item-subtitle {
+            color: #3498db;
+            margin: 2px 0;
+            font-size: 13px;
+        }
+
+        .item-date {
+            color: #7f8c8d;
+            font-size: 12px;
+            display: block;
+            margin-top: 2px;
+        }
+
+        .item-description {
+            margin-top: 6px;
+            color: #555;
+            font-size: 13px;
+            line-height: 1.5;
+        }
+
+        .skills-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+            margin-top: 6px;
+        }
+
+
+        .numberCel {
+            text-decoration: none;
+            color: #2c3e50;
+            padding-left: 1em;
+        }
+
+        .fa-envelope {
+            color: #555;
+            margin-right: 6px;
+            font-size: 16px;
+        }
+
+        .email {
+            padding-left: 1em;
+            text-decoration: none;
+            color: #2c3f50;
+
+        }
+
+
+
+        .skill-tag {
+            background: #ecf0f1;
+            color: #2c3e50;
+            padding: 3px 8px;
+            border-radius: 10px;
+            font-size: 12px;
+            border: 1px solid #ddd;
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px;
+            background: #2c3e50;
+            color: #bdc3c7;
+            font-size: 12px;
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            height: 40px;
+        }
+
+        .status {
+            background: #f39c12;
+            color: #2c3e50;
+            padding: 2px 5px;
+            border-radius: 3px;
+            font-size: 11px;
+            font-weight: 600;
+            display: inline-block;
+            margin-left: 5px;
+        }
+
+        .simple-list {
+            margin-left: 15px;
+            margin-top: 4px;
+        }
+
+        .simple-list li {
+            margin-bottom: 3px;
+            font-size: 13px;
+            line-height: 1.4;
+        }
+
+
+        .print-button {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: #3498db;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            z-index: 1000;
+            font-size: 14px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        .print-button:hover {
+            background: #2980b9;
+        }
+
+
+        @media print {
+
+            a {
+                color: #0645ad !important;
+                text-decoration: underline !important;
+            }
+
+
+            .print-button {
+                display: none !important;
+            }
+
+
+            @page {
+                margin: 0 !important;
+                padding: 0 !important;
+                size: A4;
+            }
+
+            body {
+                margin: 0 !important;
+                padding: 0 !important;
+                background: white !important;
+                width: 210mm !important;
+                height: 297mm !important;
+            }
+
+            .container {
+                width: 210mm !important;
+                height: 277mm !important;
+                margin: 0 !important;
+                padding: 0 !important;
+                box-shadow: none !important;
+                position: absolute;
+                top: 30px;
+                left: 0;
+            }
+
+
+            * {
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+                color-adjust: exact !important;
+            }
+
+
+            header,
+            main,
+            footer,
+            .section {
+                page-break-inside: avoid !important;
+                page-break-before: avoid !important;
+                page-break-after: avoid !important;
+            }
+
+
+            main {
+                height: calc(297mm - 220px) !important;
+                overflow: visible !important;
+            }
+
+
+            .sidebar,
+            .content {
+                padding: 16px !important;
+            }
+
+
+            .item-description,
+            .simple-list li {
+                font-size: 12px !important;
+            }
+
+            h1 {
+                font-size: 22px !important;
+            }
+
+            h2 {
+                font-size: 15px !important;
+            }
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <div class="header-content">
+                <h1>Dussan David Mamani Quispe</h1>
+                <p class="title">Desarrollador de Sistemas - Soporte Técnico </p>
+                <p class="title">Estudiante de Informática - UMSA</p>
+
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <i class="fas fa-birthday-cake"></i>
+                        <span>30 años (22/10/1995)</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-graduation-cap"></i>
+                        <span>Desarrollador de Sistemas - Soporte Técnico</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="photo-section">
+                <div class="photo-placeholder">
+                    <img src="img/Dussan.png" alt="Foto de Dussan David Mamani Quispe" width="200px">
+                </div>
+            </div>
+        </header>
+
+        <main>
+            <aside class="sidebar">
+                <div class="section">
+
+                    <!-- Aca cambias tu información de contacto -->
+
+                    <h2>Información de contacto</h2>
+                    <div class="education-item">
+                        <div class="item-title">Número de celular</div>
+                        <div class="item-date">
+                            <a href="https://wa.me/59171253410" target="_blank" class="numberCel">
+                                <i class="fa-brands fa-whatsapp"></i> +591 71253410
+                            </a>
+                        </div>
+
+                        <div class="item-date">
+                            <a href="https://wa.me/59163018770" target="_blank" class="numberCel">
+                                <i class="fa-brands fa-whatsapp"></i> +591 63018770
+                            </a>
+                        </div>
+                        <div class="item-title">Correo electrónico</div>
+                        <div class="item-date">
+                            <a href="mailto:dussanmamani0@gmail.com" class="email">
+                                <i class="fa-solid fa-envelope"></i> dussanmamani0@gmail.com
+                            </a>
+                        </div>
+                        <div class="item-date">
+                            <a href="mailto:dussan.david.mamani.quispe@gmail.com" class="email">
+                                <i class="fa-solid fa-envelope"></i> dussan.david.mamani.quispe@gmail.com
+                            </a>
+                             
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Aca tu Grado de educación -->
+                <div class="section">
+                    <h2>Educación</h2>
+                    <div class="education-item">
+                        <div class="item-title">Estudios primarios</div>
+                        <div class="item-subtitle">Unidad Educativa Cutty</div>
+                        <div class="item-title">Estudios secundarios</div>
+                        <div class="item-subtitle">Colegio Gualberto Villarroel López</div>
+                        <div class="item-title">Estudios Superiores</div>
+                        <div class="item-subtitle">UMSA</div>
+                        <div class="item-description">
+                            Facultad de Ciencias Puras y Naturales 
+                    </div>
+                    </div>
+                    
+                    <div class="education-item">
+                        <div class="item-title">Informática</div>
+                        <div class="item-subtitle">UMSA</div>
+                        <div class="item-date">En curso - 5to año de la carrera</div>
+                        <div class="item-description">
+                            Estudiante de la carrera de Informática.
+                        </div>
+                    </div>
+                </div>
+
+                    <div class="section">
+                        <h2>Lenguajes de Programación</h2>
+                        <div class="skills-list">
+                            <div class="skill-tag">Java (Eclipse)</div>
+                            <div class="skill-tag">Java (Netbeans)</div>
+                            <div class="skill-tag">Visual studio code</div>
+                            <div class="skill-tag">Python</div>
+                            <div class="skill-tag">Xampp</div>
+                            <div class="skill-tag">Read</div>
+                            <div class="skill-tag">Next</div>
+                            <div class="skill-tag">Oracle</div>
+                            <div class="skill-tag">PostgreSQL</div>
+                            <div class="skill-tag">HeidiSQL</div>
+                            <div class="skill-tag">Wordpress</div>
+                            <div class="skill-tag">GitHub</div>
+                            <div class="skill-tag">Git</div>
+                            <div class="skill-tag">Proteus</div>
+                            <div class="skill-tag">Cisco packet tracer</div>
+                            
+                        </div>
+                    </div>
+                </aside>
+
+            
+          
+            <!-- Aca tu expereriencia laborarl -->
+         
+            <aside class="sidebar">
+           
+            <div class="section">
+                <h2>Habilidades</h2>
+                <div class="skills-list">
+                    <div class="skill-tag">Soporte Técnico</div>
+                    <div class="skill-tag">Hardware de Celulares</div>
+                    <div class="skill-tag">Software de Celulares</div>
+                    <div class="skill-tag">Redes Lan</div>
+                    <div class="skill-tag">Cableado Estructurado de redes</div>
+                    <div class="skill-tag">Ensamblaje</div>
+                    <div class="skill-tag">Configuración de Pc y Lapto</div>
+                </div>
+            </div>
+
+             
+            <div class="section">
+                <h2>Conocimientos</h2>
+                <div class="item-description">
+                    • Mantenimiento de equipos<br>
+                    • Instalación de sistemas<br>
+                    • Soporte técnico
+                </div>
+            </div>
+
+                <div class="section">
+                    <h2>Experiencia Laboral</h2>
+
+                    <div class="experience-item">
+                        <div class="item-title">Espacio laboral propio</div>
+                        <div class="item-subtitle">Area de trabajo</div>
+                        <div class="item-date">01/10/2022</div>
+                        <div class="item-description">
+                            <ul class="simple-list">
+                                <li>Soporte Tecnico</li>
+                                <li>Tecnico Celulares</li>
+                                <li>Configuración de Pc y Laptop</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="section">
+                        <h2>Idiomas</h2>
+                        <div class="education-item">
+                            <div class="item-title">Ingles (Medio)</div>
+                            <div class="item-title">Aymara (Medio)</div>
+                        </div>
+                        </div>
+    
+            </aside>
+
+            
+                <!-- Aca cursos complementarios, mayormente los  certificados de cursos etc-->
+                <aside class="sidebar">
+           
+                <div class="section">
+                    <h2>Cursos adicionales</h2>
+                    <div class="item-description">
+                        <ul class="simple-list">
+                            <li> INSTITUTO TECNOLÓGICO INFOCAL </li>
+                            <span>Matemáticas Nivel Secundario (2012)</span>
+                            <li> INSTITUTO TECNOLÓGICO INFOCAL </li>
+                            <span>Física Secundario-Pre facultativo (2014)</span>
+                            <li> INSTITUTO TECNOLÓGICO INFOCAL </li>
+                            <span> Calculo I (2014)</span>
+                            <li> INSTITUTO TECNOLÓGICO INFOCAL </li>
+                            <span>Hardware de Celulares (2022)</span>
+                            <li> INSTITUTO TECNOLÓGICO INFOCAL </li>
+                            <span>Software de Celulares (2022)</span>
+                            <li> INSTITUTO TECNOLÓGICO INFOCAL </li>
+                            <span>Ensamblaje y Configuración de PC´S y LAPTOS (2022)</span>
+                            <li> INSTITUTO TECNOLÓGICO INFOCAL </li>
+                            <span>Redes Lan y Cableado Estructurado (2023)</span>
+                        
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <h2>Proyectos</h2>
+
+                    <div class="project-item">
+                        <div class="item-title"></div>
+                        <div class="item-date"></div>
+                        <div class="item-description">
+                            <p class="item-subtitle">Pagina Web Read</p>
+                            <a href="https://dussan-mamani.github.io/pagina-dussan/" target="_blank" class="numberCel" >
+                                <i class="fa-brands fa-brands"></i> https://dussan-mamani.github.io/pagina-dussan/
+                            </a>   
+                            <p class="item-subtitle">Pagina Web HTML</p>
+                            <a href="https://dussan-mamani.github.io/Dussan/" target="_blank" class="numberCel">
+                                <i class="fa-brands fa-brands"></i> https://dussan-mamani.github.io/Dussan/
+                            </a>   
+                        
+                        </div>
+                    </div>
+
+                    <div class="project-item">
+                        <div class="item-title"></div>
+                        <div class="item-date"></div>
+                        <div class="item-description">
+                            
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <h2>Perfil</h2>
+                    <div class="item-description">
+                        Desarrollador de sistemas, soporte técnico, redes lan y estudiante de informática.
+                        Experiencia en implementación de sistemas técnicos, mantenimiento de equipos
+                        y soporte. Capacidad para diagnóstico y solución de problemas técnicos.
+                    </div>
+                </div>
+            </section>
+        </aside>
+
+</main>
+
+        <footer>
+            <p>Curriculum Vitae - Dussan David Mamani Quispe</p>
+        </footer>
+    </div>
+
+    <button class="print-button" onclick="window.print();" title="Haz clic para imprimir. En la ventana de impresión:
+1. DESTINO: 'Guardar como PDF'
+2. PÁGINAS: 'Todas'
+3. PAPEL: A4
+4. MÁRGENES: 'Ninguno'
+5. ESCALA: 100%
+6. OPCIONES: ✓ 'Fondo de gráficos' (IMPORTANTE)
+7. OPCIONES: ✗ 'Encabezados y pies de página'
+Si no cabe, reducir 'Escala' a 95%">
+        <i class="fas fa-print"></i> Imprimir CV (1 hoja)
+    </button>
+
+    <script>
+    </script>
+</body>
+
+</html>
